@@ -73,13 +73,21 @@ The tenants and their configuration be found in [src/data/user/tenants.ts](/src/
 
 ### Prerequisites
 
-Install (Node.js](https://nodejs.org/en/) v20 or up
+Install [Node.js](https://nodejs.org/en/) v20 or up
 
 ### Run the app
 ```bash
 npm install
 npm run dev
 ```
+
+### Run with Docker
+
+```bash
+docker run --rm -p 8080:8080 ghcr.io/platform-mesh/poc-ord-reference-application:latest
+```
+
+For the full Docker, Kubernetes, and GHCR guide see [docs/docker-guide.md](docs/docker-guide.md).
 
 ## ORD Implementation / Aspects
 
