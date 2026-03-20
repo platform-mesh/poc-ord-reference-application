@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.github
+docs
+reports
+LICENSES
+*.md
+.eslintrc*
+.prettierrc*
+jest.config*
+.reuse

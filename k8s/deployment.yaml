@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ord-reference-app
+  labels:
+    app: ord-reference-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ord-reference-app
+  template:
+    metadata:
+      labels:
+        app: ord-reference-app
+    spec:
+      containers:
+        - name: ord-reference-app
+          image: ghcr.io/platform-mesh/poc-ord-reference-application:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: production
+          livenessProbe:
+            httpGet:
+              path: /health/v1/
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /health/v1/
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 5
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
