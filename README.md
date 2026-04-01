@@ -1,3 +1,7 @@
+> [!CAUTION]
+> This is an experimental demo app for showing in the NeoNephos booth at KubeCon along with other projects where Platform Mesh acts as the orchestration layer.
+
+
 [![REUSE status](https://api.reuse.software/badge/github.com/open-resource-discovery/reference-application)](https://api.reuse.software/info/github.com/open-resource-discovery/reference-application)
 
 # Open Resource Discovery - Reference Application
